@@ -13,7 +13,6 @@ function displayCategories(categories) {
   // loop operation on array of object
 
   for (let category of categories) {
-    console.log(category);
 
     // create element
     const categoryDiv = document.createElement("div");
