@@ -10,6 +10,8 @@ const displayVideos = (videos) => {
   // get the video container
   const videoContainer = document.getElementById("video-container");
 
+  videoContainer.innerHTML = "";
+
      // loop on videos
   videos.forEach((video) => {
     console.log(video);
@@ -55,4 +57,4 @@ const displayVideos = (videos) => {
     videoContainer.append(videoCard);
   });
 };
-loadVideos();
+// loadVideos();

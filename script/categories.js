@@ -6,6 +6,7 @@ function loadCategories() {
     // send data to displayCategories
     .then((data) => displayCategories(data.categories));
 }
+
 function displayCategories(categories) {
   // get the container
   const categoryContainer = document.getElementById("category-container");
@@ -17,7 +18,7 @@ function displayCategories(categories) {
     // create element
     const categoryDiv = document.createElement("div");
     categoryDiv.innerHTML = `
-    <button class="btn btn-sm">${category.category}</button>
+    <button onclick="loadCategoryVideos(${category.category_id})" class="btn btn-sm hover:bg-[#FF1F3D] hover:text-white">${category.category}</button>
     `
 
     // append the element
