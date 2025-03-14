@@ -12,6 +12,15 @@ const displayVideos = (videos) => {
 
   videoContainer.innerHTML = "";
 
+  if(videos.length==0){
+    videoContainer.innerHTML=`
+    <div class="col-span-full flex flex-col justify-center items-center py-20">
+        <img class="my-4" src="./assests/Icon.png" alt="">
+        <h1 class="text-2xl font-bold">Oops!! Sorry, There is no content here</h1>
+     </div>
+    `
+    return;
+  }
      // loop on videos
   videos.forEach((video) => {
     console.log(video);
