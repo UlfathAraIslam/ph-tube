@@ -11,6 +11,13 @@
       type="text/css"
     />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- style -->
+     <style>
+      .active{
+        background: #FF1F3D;
+        color: white;
+      }
+     </style>
   </head>
   <body>
     <header>
@@ -31,7 +38,7 @@
     <!-- category container -->
     <nav id="category-container" class="flex justify-center gap-5 py-5">
       <div>
-        <button onclick="loadVideos()" class="btn btn-sm bg-[#FF1F3D] text-white">All</button>
+        <button id="btn-all" onclick="loadVideos()" class="btn btn-sm">All</button>
       </div>
     </nav>
     <!-- video container -->
@@ -46,8 +53,9 @@
      </div>
     </section>
     <!-- js file -->
-     <script src="script/category-videos.js"></script>
+     <!-- <script src="script/category-videos.js"></script>
     <script src="script/categories.js"></script>
-    <script src="script/videos.js"></script>
+    <script src="script/videos.js"></script> -->
+    <script src="script/index.js"></script>
   </body>
 </html>
