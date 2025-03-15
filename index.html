@@ -12,12 +12,12 @@
     />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- style -->
-     <style>
-      .active{
-        background: #FF1F3D;
+    <style>
+      .active {
+        background: #ff1f3d;
         color: white;
       }
-     </style>
+    </style>
   </head>
   <body>
     <header>
@@ -38,7 +38,9 @@
     <!-- category container -->
     <nav id="category-container" class="flex justify-center gap-5 py-5">
       <div>
-        <button id="btn-all" onclick="loadVideos()" class="btn btn-sm">All</button>
+        <button id="btn-all" onclick="loadVideos()" class="btn btn-sm">
+          All
+        </button>
       </div>
     </nav>
     <!-- video container -->
@@ -46,14 +48,32 @@
       id="video-container"
       class="w-11/12 mx-auto grid grid-cols-4 gap-5"
     >
-    <!-- empty video container -->
-     <div class="col-span-full flex flex-col justify-center items-center py-20">
-        <img class="my-4" src="./assests/Icon.png" alt="">
-        <h1 class="text-2xl font-bold">Oops!! Sorry, There is no content here</h1>
-     </div>
+      <!-- empty video container -->
+      <div
+        class="col-span-full flex flex-col justify-center items-center py-20"
+      >
+        <img class="my-4" src="./assests/Icon.png" alt="" />
+        <h1 class="text-2xl font-bold">
+          Oops!! Sorry, There is no content here
+        </h1>
+      </div>
     </section>
+
+    <!-- Open the modal using ID.showModal() method -->
+    <!-- <button class="btn" onclick="video_details.showModal()">open modal</button> -->
+    <dialog id="video_details" class="modal">
+      <div class="modal-box">
+        <div id="details-container"></div>
+        <div class="modal-action">
+          <form method="dialog">
+            <!-- if there is a button in form, it will close the modal -->
+            <button class="btn">Close</button>
+          </form>
+        </div>
+      </div>
+    </dialog>
     <!-- js file -->
-     <!-- <script src="script/category-videos.js"></script>
+    <!-- <script src="script/category-videos.js"></script>
     <script src="script/categories.js"></script>
     <script src="script/videos.js"></script> -->
     <script src="script/index.js"></script>

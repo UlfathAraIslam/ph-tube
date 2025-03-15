@@ -39,6 +39,29 @@ const loadCategoryVideos = (id) => {
     });
 };
 
+const loadVideoDetails=(videoId)=> {
+  const url = `https://openapi.programming-hero.com/api/phero-tube/video/${videoId}`
+  fetch(url)
+  .then((res)=>res.json())
+  .then((data)=>displayVideoDetails(data.video))
+}
+const displayVideoDetails=(video)=>{
+  document.getElementById("video_details").showModal();
+  const detailsContainer = document.getElementById("details-container");
+  detailsContainer.innerHTML = `
+  <div class="card bg-base-100 image-full w-96 shadow-sm">
+  <figure>
+    <img
+      src="${video.thumbnail}" />
+  </figure>
+  <div class="card-body">
+    <h2 class="card-title">${video.title}</h2>
+    <p>${video.description}</p>
+  </div>
+</div>
+  `
+}
+
 function displayCategories(categories) {
   // get the container
   const categoryContainer = document.getElementById("category-container");
@@ -105,7 +128,7 @@ const displayVideos = (videos) => {
           </div>
 
           <div class="intro">
-            <h2 class="text-sm font-semibold">Midnight Serenade</h2>
+            <h2 class="text-sm font-semibold">${video.title}</h2>
             <p class="text-sm text-gray-400 flex gap-1">
              ${video.authors[0].profile_name}
               ${
@@ -122,9 +145,7 @@ const displayVideos = (videos) => {
           </div>
 
         </div>
-        <button onclick=loadVideoDetails('${
-          video.video_id
-        }') class="btn btn-block">Show Details</button>
+        <button onclick=loadVideoDetails('${video.video_id}') class="btn btn-block">Show Details</button>
       </div>
     
     `;
